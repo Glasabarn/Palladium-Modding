@@ -1,0 +1,148 @@
+{
+    "name": "Test Power",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": "minecraft:apple",
+    "abilities": 
+    {
+        "laser":{
+            "type": "palladium:energy_beam",
+            "icon": "minecraft:blaze_rod",
+            "bar_color": "light_blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "energy_beam": "meow2:heat_vision",
+            "damage": 3,
+            "max_distance": 30,
+            "speed": 0.5,
+            "set_on_fire_seconds": 1,
+            "cause_fire": true,
+            "smelt_blocks": false,
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:held",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false
+                }
+            }
+      },
+
+        "vibrate":{
+            "type": "palladium:vibrate",
+            "icon": "minecraft:stick",
+            "title": "null",
+            "bar_color": "light_blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false
+                }
+            }
+      },
+
+        "speed":{
+            "type": "palladium:attribute_modifier",
+            "icon": "null",
+            "title": "speed",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "vibrate"
+                }
+            }
+      },
+        "step":{
+            "type": "palladium:attribute_modifier",
+            "icon": "null",
+            "title": "step",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "forge:step_height_addition",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "vibrate"
+                }
+            }
+      },
+        "waterwalk":{
+            "type": "palladium:fluid_walking",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "fluid_tag": "minecraft:water",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "vibrate"
+                }
+            }
+      },
+        "trail":{
+                "type": "palladium:trail",
+                "icon": "minecraft:blaze_rod",
+                "title": "null",
+                "bar_color": "light_gray",
+                "hidden": false,
+                "hidden_in_bar": false,
+                "list_index": -1,
+                "gui_position": "null",
+                "description": "null",
+                "trail": "meow2:trail",
+                "conditions":
+                {
+                    "enabling":
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "vibrate"
+                    }
+                }
+        }
+    }
+  }

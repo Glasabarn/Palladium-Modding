@@ -1,0 +1,30 @@
+[
+    {
+    "body_part": "head",
+    "glow_color": "#ff0000",
+    "core_color": "#ffffff",
+    "glow_opacity": 1,
+    "core_opacity": 0.25,
+    "size": 1,
+    "bloom": 1,
+    "offset": [
+      2,
+      3,
+      -1
+    ]
+  },
+  {
+    "body_part": "head",
+    "glow_color": "#ff0000",
+    "core_color": "#ffffff",
+    "glow_opacity": 1,
+    "core_opacity": 0.25,
+    "size": 1,
+    "bloom": 1,
+    "offset": [
+      -2,
+      3,
+      -1
+    ]
+  }
+]

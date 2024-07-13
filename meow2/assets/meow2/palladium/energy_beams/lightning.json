@@ -1,0 +1,38 @@
+[
+    {
+        "type": "palladium:lightning",
+        "body_part": "right_arm",
+        "glow_color": "#5fa8ec",
+        "segments": 15,
+        "spread": 15,
+        "frequency": 2,
+        "glow_opacity": 0.5,
+        "core_opacity": 0.5,
+        "size": [0.3,0.3],
+        "offset": [0, -11, 0]
+    },
+    {
+      "type": "palladium:lightning",
+      "body_part": "right_arm",
+      "glow_color": "#3787d2",
+      "segments": 11,
+      "spread": 12,
+      "frequency": 1,
+      "glow_opacity": 0.5,
+      "core_opacity": 0.5,
+      "size": [0.3,0.3],
+      "offset": [0, -11, 0]
+    },
+    {
+      "type": "palladium:lightning",
+      "body_part": "right_arm",
+      "glow_color": "#b1d0ed",
+      "segments": 13,
+      "spread": 9,
+      "frequency": 3,
+      "glow_opacity": 0.5,
+      "core_opacity": 0.5,
+      "size": [0.3,0.3],
+      "offset": [0, -11, 0]
+    }
+]

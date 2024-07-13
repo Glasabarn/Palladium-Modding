@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "id": "viggos_powers",
+    "description": "Cool powers",
+    "pack_format": 15,
+    "version": "1.0.0"
+  },
+  "dependencies": {
+    "common": {
+    },
+    "fabric": {
+    },
+    "forge": {
+    }
+  }
+}

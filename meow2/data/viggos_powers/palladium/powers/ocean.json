@@ -1,0 +1,88 @@
+{
+    "name": "Ocean Man",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": "minecraft:salmon",
+    "abilities": 
+    {
+        "physiology1":{
+            "type": "palladium:attribute_modifier",
+            "icon": "null",
+            "title": "flying",
+            "bar_color": "null",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "forge:swim_speed",
+            "amount": 2.5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:in_water"
+                }
+            }
+        },
+            "physiology2":{
+                "type": "palladium:healing",
+                "icon": "minecraft:apple",
+                "title": "null",
+                "bar_color": "light_gray",
+                "hidden": false,
+                "hidden_in_bar": false,
+                "list_index": -1,
+                "gui_position": "null",
+                "description": "null",
+                "frequency": 20,
+                "amount": 1,
+                "conditions":{
+                    "enabling":{
+                        "type": "palladium:in_water"
+                    }
+                }
+        },
+            "physiology3":{
+                "type": "palladium:command",
+                "icon": "minecraft:command_block",
+                "title": "null",
+                "bar_color": "light_gray",
+                "hidden": false,
+                "hidden_in_bar": false,
+                "list_index": -1,
+                "gui_position": "null",
+                "description": "null",
+                "first_tick_commands": [],
+                "last_tick_commands": [],
+                "commands": [
+                    "effect give @s minecraft:water_breathing 1 1 true"
+                ],
+                "conditions":{
+                    "enabling":{
+                        "type": "palladium:in_water"
+                    }
+                }
+        },
+            "physiology4":{
+                "type": "palladium:command",
+                "icon": "minecraft:command_block",
+                "title": "null",
+                "bar_color": "light_gray",
+                "hidden": false,
+                "hidden_in_bar": false,
+                "list_index": -1,
+                "gui_position": "null",
+                "description": "null",
+                "first_tick_commands": [],
+                "last_tick_commands": [],
+                "commands": [
+                    "effect give @s minecraft:night_vision 1 1 true"
+                ],
+                "conditions":{
+                    "enabling":{
+                        "type": "palladium:in_water"
+                    }
+                }
+        }
+    }
+}

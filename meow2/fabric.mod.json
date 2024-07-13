@@ -1,0 +1,11 @@
+{
+    "schemaVersion": 1,
+    "authors": [],
+    "environment": "*",
+    "name": "Viggos Powers",
+    "id": "viggos_powers",
+    "version": "1.0.0",
+    "description": "Cool powers",
+    "icon": "logo.png",
+    "license": "All rights reserved"
+}
