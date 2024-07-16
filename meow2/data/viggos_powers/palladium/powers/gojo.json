@@ -1,0 +1,287 @@
+{
+    "name": "Gojo",
+    "background": "minecraft:textures/block/purple_wool.png",
+    "icon": "minecraft:nether_star",
+    "abilities": 
+    {
+
+        "aim":{
+          "type": "palladium:aim",
+          "icon": "minecraft:blaze_rod",
+          "title": "null",
+          "bar_color": "purple",
+          "hidden": false,
+          "hidden_in_bar": false,
+          "list_index": 0,
+          "gui_position": "null",
+          "description": "null",
+          "time": 5,
+          "arm": "main_arm",
+          "conditions":
+          {
+              "enabling":
+                  {
+                      "type": "palladium:held",
+                      "cooldown": 0,
+                      "key_type": "right_click",
+                      "needs_empty_hand": true
+                  }
+          }
+      },
+
+        "infinity":{
+            "type": "palladium:command",
+            "icon": "minecraft:nether_star",
+            "title": "null",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @e[distance=0.01..3] minecraft:slowness 1 3 false",
+                "effect give @e[distance=0.01..2] minecraft:slowness 1 6 false",
+                "effect give @e[distance=0.01..3] minecraft:levitation 1 0 false",
+                "effect give @e[distance=0.01..3] irons_spellbooks:antigravity 1 6 false"
+            ],
+            "conditions":
+                {
+                    "enabling":
+                        {
+                            "type": "palladium:toggle",
+                            "cooldown": 0,
+                            "key_type": "key_bind",
+                            "needs_empty_hand": false,
+                            "allow_scrolling_when_crouching": true
+                        }
+                }
+      },
+
+        "infinity_push":{
+            "type": "heroes:infinity",
+            "icon": {
+                "type": "palladium:item",
+                "item": "minecraft:air",
+                "count": 0
+            },
+            "title": "null",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 2,
+            "tag_ex": "exclusion_tag",
+            "conditions":
+            {
+                "enabling":
+                [{
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "infinity"
+                }]
+            }
+      },
+
+        "infinity_flight":{
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "palladium:flight_speed",
+            "amount": 1.5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":
+            {
+                "enabling":
+                {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "infinity"
+                }
+            }
+
+      },
+
+        "purple_hollow":{
+            "type": "palladium:projectile",
+            "icon": "minecraft:snowball",
+            "title": "null",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 2,
+            "gui_position": "null",
+            "description": "null",
+            "inaccuracy": 0,
+            "velocity": 2.5,
+            "swinging_arm": "none",
+            "damage_from_player": false,
+            "ignore_player_movement": true,
+            "entity_type": "palladium:custom_projectile",
+            "entity_data": {
+                "CommandOnEntityHit": "/summon minecraft:area_effect_cloud ~ ~ ~ {Passengers:[{id:tnt},{id:tnt}]}",
+                "CommandOnBlockHit": "/summon minecraft:area_effect_cloud ~ ~ ~ {Passengers:[{id:tnt},{id:tnt}]}",
+                "SetEntityOnFireSeconds": 0,
+                "Damage": 25,
+                "Gravity": 0.00,
+                "ExplosionRadius": 2,
+                "ExplosionCausesFire": 0,
+                "Size": 0,
+                "Lifetime": 100,
+                "DieOnEntityHit": false,
+                "DieOnBlockHit": false,
+                "Appearances": [
+                    {
+                    "Type": "particles",
+                    "ParticleType": "irons_spellbooks:unstable_ender",
+                    "Spread": 0.4,
+                    "Amount": 50
+                    },
+                    {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:end_rod",
+                    "Spread": 0.2,
+                    "Amount": 12
+                    }]
+            },
+            "conditions":
+            {
+                "enabling":
+                        [{
+                            "type": "palladium:action",
+                            "cooldown": 20,
+                            "key_type": "left_click",
+                            "needs_empty_hand": false,
+                            "allow_scrolling_when_crouching": true
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "power": "null",
+                            "ability": "aim"
+                        }
+                        ]
+            }
+      },
+
+        "self_blue":{
+          "type": "palladium:command",
+          "hidden": true,
+          "bar_color": "purple",
+          "first_tick_commands":
+          [
+            "function viggos_powers:load"
+          ],
+          "commands":
+          [
+            "execute as _Surtur at @s run function viggos_powers:tick_player"
+          ],
+          "icon": "heroes:textures/gui/spatial_tp.png",
+          "title": "Self Blue",
+          "list_index": 2,
+          "conditions":
+          {
+              "enabling":
+                  [{
+                      "type": "palladium:action",
+                      "cooldown": 10,
+                      "key_type": "key_bind",
+                      "needs_empty_hand": true,
+                      "allow_scrolling_when_crouching": true
+                  },
+                  {
+                      "type": "palladium:ability_enabled",
+                      "power": "null",
+                      "ability": "aim"
+                  }]
+          }
+      },
+      
+      "tele":{
+        "type": "palladium:command",
+        "hidden": true,
+        "bar_color": "purple",
+        "first_tick_commands":
+        [
+          "function viggos_powers:load"
+        ],
+        "last_tick_commands":
+        [
+          "execute as @s run tag @e[tag=teleEntity] remove teleEntity"
+        ],
+        "commands":
+        [
+          "execute as _Surtur at @s run function viggos_powers:tele_start"
+        ],
+        "icon": "heroes:textures/gui/spatial_tp.png",
+        "title": "Telekinesis",
+        "list_index": 3,
+        "conditions":
+        {
+            "enabling":
+                [{
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }]
+        }
+
+      },
+        
+
+        "reverse_cursed_technique":{
+        "type": "palladium:healing",
+        "icon": "minecraft:axolotl_bucket",
+        "title": "null",
+        "bar_color": "black",
+        "hidden": false,
+        "hidden_in_bar": false,
+        "list_index": 4,
+        "gui_position": "null",
+        "description": "null",
+        "frequency": 5,
+        "amount": 1,
+        "conditions":
+        {
+            "enabling":[{
+                "type": "palladium:toggle",
+                "cooldown": 0,
+                "key_type": "key_bind",
+                "needs_empty_hand": false,
+                "allow_scrolling_when_crouching": true
+            }]
+        }
+      },
+
+        "rct_appearance":{
+        "type": "palladium:particles",
+        "emitter": [
+            "meow2:body"
+        ],
+        "particle_type": "irons_spellbooks:ring_smoke",
+        "conditions":
+        {
+            "enabling":[{
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "reverse_cursed_technique"
+            }]
+        }
+      }
+
+
+    }
+}
+
