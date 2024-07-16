@@ -1,7 +1,7 @@
 {
     "name": "Weather Manipulation",
     "background": "minecraft:textures/block/red_wool.png",
-    "icon": "minecraft:apple",
+    "icon": "minecraft:stick",
     "abilities": 
     {
         "rain":{
@@ -147,11 +147,7 @@
     },
         "test":{
             "type": "palladium:entity_damage",
-            "icon": {
-                "type": "palladium:item",
-                "item": "minecraft:air",
-                "count": 0
-            },
+            "icon": "minecraft:apple",
             "title": "null",
             "bar_color": "light_blue",
             "hidden": false,
@@ -160,7 +156,7 @@
             "gui_position": "null",
             "description": "null",
             "damage": 0,
-            "damage_type": "minecraft:cactus",
+            "damage_type": "no_knockback",
             "effect": "null",
             "fire_seconds": 0,
             "potion_seconds": 0,
