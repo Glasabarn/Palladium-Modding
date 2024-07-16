@@ -1,0 +1,1 @@
+function viggos_powers:telekinesis/tele_cast

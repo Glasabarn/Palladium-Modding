@@ -1,0 +1,156 @@
+{
+    "name": "Human Torch",
+    "background": "minecraft:textures/block/netherrack.png",
+    "icon": "irons_spellbooks:fire_upgrade_orb",
+    "abilities": 
+    {
+
+        "flame_on_dummy":{
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            }
+        },
+
+        "flight_particles":{
+            "type": "palladium:particles",
+            "emitter": [
+                "meow2:right_hand",
+                "meow2:left_hand"
+            ],
+            "particle_type": "irons_spellbooks:fire",
+            "conditions":
+            {
+                "enabling":
+                [{
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "flame_on_dummy"
+                },
+                {
+                    "type": "palladium:is_hovering_or_flying"
+                }
+                ]
+            }
+        },
+
+        "flame_on":{
+            "type": "palladium:skin_change",
+            "texture": "meow2:textures/models/iron_man_suit.png",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "flame_on_dummy"
+                }
+            }
+        },
+
+        "skin_overlay":{
+            "type": "palladium:render_layer",
+            "render_layer": "meow2:skin_overlay_test",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "flame_on_dummy"
+                }
+            }
+        },
+
+        "flame_flight":{
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "palladium:flight_speed",
+            "amount": 2.5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":
+            {
+                "enabling":
+                {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "flame_on"
+                }
+            }
+        },
+
+        "flame_trail":{
+            "type": "palladium:trail",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "trail": "meow2:flame",
+            "conditions":
+            {
+                "enabling":
+                [{
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "flame_on"
+                },
+                {
+                    "type": "palladium:is_fast_flying"
+                }]
+            }
+        },
+
+        "aim":{
+            "type": "palladium:aim",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "time": 5,
+            "arm": "main_arm",
+            "conditions":
+            {
+                "enabling":
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 0,
+                        "key_type": "right_click",
+                        "needs_empty_hand": true
+                    }
+            }
+        }
+  
+    }
+}
