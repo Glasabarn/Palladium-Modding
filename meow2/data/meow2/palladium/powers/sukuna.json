@@ -1,0 +1,214 @@
+{
+    "name": "Sukuna",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": {
+        "type": "palladium:texture",
+        "texture": "meow2:textures/icons/red.png"
+    },
+    "gui_display_type": "tree",
+
+    "energy_bars": {
+        "Cursed Energy": {
+            "max": 1000,
+            "auto_increase_per_tick": 20,
+            "auto_increase_interval": 5,
+            "color": "#ff0000"
+        }
+    },
+
+    "abilities": 
+    {
+
+        "aura":{
+            "type": "palladium:render_layer",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "render_layer": "meow2:aura",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "reverse_cursed_technique"
+                }
+            }
+      },
+
+        "aim":{
+          "type": "palladium:aim",
+          "icon": "minecraft:iron_sword",
+          "title": "null",
+          "bar_color": "red",
+          "hidden": true,
+          "hidden_in_bar": false,
+          "list_index": 0,
+          "gui_position": "null",
+          "description": "null",
+          "time": 5,
+          "arm": "main_arm",
+          "conditions":
+          {
+              "enabling":
+                {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "cleave"
+                }
+          }
+      },
+
+        "cleave":{
+            "type": "palladium:command",
+            "icon": {
+                "type": "palladium:texture",
+                "texture": "meow2:textures/icons/blood_manipulation.png"
+                },
+            "title": "Cleave",
+            "bar_color": "red",
+            "energy_bar_usage": {
+                "energy_bar": "Cursed Energy",
+                "amount": 50
+            },
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "function meow2:load"
+            ],
+            "last_tick_commands": [
+            ],
+            "commands":
+            [
+              "execute as _Surtur at @s run function meow2:cleave_start"
+            ],
+            "conditions":
+            {
+                "unlocking": 
+                {
+                    "type": "palladium:energy_bar",
+                    "energy_bar": "Cursed Energy",
+                    "min": 50
+                },
+
+                "enabling":
+                [{
+                    "type": "palladium:activation",
+                    "cooldown": 60,
+                    "ticks": 10,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }]
+            }
+      },
+
+        "body_test":{
+            "type": "palladium:remove_body_part",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "body_parts": [
+                "chest",
+                "chest_overlay"
+            ],
+            "affects_first_person": true,
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            }
+        },
+
+
+        "body_test2":{
+            "type": "palladium:remove_body_part",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "body_parts": [
+                "chest",
+                "chest_overlay"
+            ],
+            "affects_first_person": true,
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            }
+        },
+
+        "reverse_cursed_technique":{
+            "type": "palladium:healing",
+            "icon": "minecraft:axolotl_bucket",
+            "title": "null",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": "null",
+            "description": "null",
+            "frequency": 5,
+            "amount": 1,
+            "conditions":
+            {
+                "enabling":[{
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }]
+            }
+      },
+
+        "rct_appearance":{
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "meow2:sukuna_body"
+            ],
+            "particle_type": "irons_spellbooks:embers",
+            "conditions":
+            {
+                "enabling":[{
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "reverse_cursed_technique"
+                }]
+            }
+      }
+
+    }
+}
+

@@ -1,0 +1,63 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.limitless_red.idle": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"red": {
+					"position": {
+						"0.0": {
+							"vector": [0, -1.35, 0]
+						},
+						"0.5": {
+							"vector": [0, -1.6, 0]
+						},
+						"1.0": {
+							"vector": [0, -1.35, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0.4, 0.4, 0.4]
+						},
+						"0.5": {
+							"vector": [0.5, 0.5, 0.5],
+							"easing": "easeInSine"
+						},
+						"1.0": {
+							"vector": [0.4, 0.4, 0.4],
+							"easing": "easeOutQuad"
+						}
+					}
+				}
+			}
+		},
+		"animation.limitless_red.explode": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.125,
+			"bones": {
+				"red": {
+					"position": {
+						"0.0": {
+							"vector": [0, -1.35, 0]
+						},
+						"0.125": {
+							"vector": [0, -0.5, 0],
+							"easing": "easeInOutCirc"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0.4, 0.4, 0.4]
+						},
+						"0.125": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutCirc"
+						}
+					}
+				}
+			}
+		}
+	}
+}

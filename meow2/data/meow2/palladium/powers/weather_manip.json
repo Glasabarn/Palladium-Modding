@@ -1,0 +1,184 @@
+{
+    "name": "Weather Manipulation",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": "minecraft:stick",
+    "abilities": 
+    {
+        "rain":{
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "weather rain"
+            ],
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:chat_action",
+                    "chat_message": "rain",
+                    "cooldown": 0
+                }
+            }
+
+    },
+        "clear":{
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "weather clear"
+            ],
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:chat_action",
+                    "chat_message": "clear",
+                    "cooldown": 0
+                }
+            }
+
+    },
+        "storm":{
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "weather thunder"
+            ],
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:chat_action",
+                    "chat_message": "storm",
+                    "cooldown": 0
+                }
+            }
+
+    },
+        "levitation":{
+            "type": "palladium:attribute_modifier",
+            "icon": "null",
+            "title": "levitation",
+            "bar_color": "null",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "palladium:levitation_speed",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1"
+    },
+        "flying":{
+            "type": "palladium:attribute_modifier",
+            "icon": "null",
+            "title": "flying",
+            "bar_color": "null",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "palladium:flight_speed",
+            "amount": 1.4,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:is_in_rain"
+                }
+            }
+    },
+        "blast":{
+            "type": "palladium:energy_beam",
+            "icon": "minecraft:bone",
+            "title": "Channel Lightning",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "energy_beam": "meow2:lightning",
+            "damage": 5,
+            "max_distance": 30,
+            "speed": 0.5,
+            "set_on_fire_seconds": 0,
+            "cause_fire": false,
+            "smelt_blocks": false,
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:held",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false
+                }
+            }
+    },
+        "test":{
+            "type": "palladium:entity_damage",
+            "icon": "minecraft:apple",
+            "title": "null",
+            "bar_color": "light_blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "damage": 0,
+            "damage_type": "no_knockback",
+            "effect": "null",
+            "fire_seconds": 0,
+            "potion_seconds": 0,
+            "potion_amplifier": 0,
+            "hide_particles": false,
+            "range": 2,
+            "at": "null",
+            "by": "@s",
+            "from": "@s",
+            "command_as_entity": "kill",
+            "excluded_tag": "damage_excluded_tag",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false
+                }
+            }
+    }
+
+  }
+}

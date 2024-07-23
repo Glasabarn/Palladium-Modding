@@ -1,0 +1,1 @@
+execute as @s run tp _Surtur ^ ^1 ^

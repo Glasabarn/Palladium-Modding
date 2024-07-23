@@ -1,0 +1,26 @@
+{
+    "name": "Six Eyes",
+    "background": "minecraft:textures/block/amethyst_block.png",
+    "icon": "meow2:textures/icons/six_eyes.png",
+    "gui_display_type": "tree",
+    "abilities": 
+    {
+        "6E_1":{
+            "type": "palladium:command",
+            "icon": "meow2:textures/icons/six_eyes.png",
+            "title": "Six Eyes",
+            "bar_color": "light_blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @s irons_spellbooks:planar_sight 1 10 true",
+                "effect give @s minecraft:night_vision 1 10 true"
+            ]
+        }
+    }
+}

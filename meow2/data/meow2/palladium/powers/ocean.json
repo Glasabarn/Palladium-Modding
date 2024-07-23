@@ -1,0 +1,199 @@
+{
+    "name": "Ocean Man",
+    "background": "minecraft:textures/block/blue_wool.png",
+    "icon": "pantheonsent:lunar_totem",
+    "abilities": 
+    {
+        "physiology1":{
+            "type": "palladium:attribute_modifier",
+            "icon": "null",
+            "title": "flying",
+            "bar_color": "null",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "forge:swim_speed",
+            "amount": 2.5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:in_water"
+                }
+            }
+        },
+
+        "physiology2":{
+            "type": "palladium:healing",
+            "icon": "minecraft:apple",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "frequency": 10,
+            "amount": 2,
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:in_water"
+                }
+            }
+        },
+
+        "physiology3":{
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @s minecraft:water_breathing 1 1 true"
+            ],
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:in_water"
+                }
+            }
+        },
+
+        "physiology4":{
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @s minecraft:night_vision 1 1 true"
+            ],
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:in_water"
+                }
+            }
+        },
+
+        "water_dummy":{
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions":
+            {
+                "enabling":
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            }
+        },
+
+        "water_particles":{
+            "type": "palladium:particles",
+            "emitter": [
+                "meow2:waterl",
+                "meow2:waterr"
+            ],
+            "particle_type": "minecraft:fishing",
+            "options": "",
+            "conditions":
+            {
+                "enabling":
+                [{
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "water_dummy"
+                }
+                ]
+            }
+        },
+
+        "ace": {
+            "type": "palladium:animation_timer",
+            "title": "ace",
+            "start_value": 0,
+            "max_value": 70,
+            "conditions": {
+                "enabling": {
+                    "type": "palladium:activation",
+                    "cooldown": 0,
+                    "ticks": 70,
+                    "key_type": "key_bind"
+                }
+            }
+        },
+
+        "ace_attack": {
+            "type": "palladium:projectile",
+            "icon": "minecraft:snowball",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "inaccuracy": 0,
+            "velocity": 1.5,
+            "swinging_arm": "none",
+            "damage_from_player": false,
+            "ignore_player_movement": false,
+            "entity_type": "palladium:custom_projectile",
+            "entity_data": {
+                "CommandOnEntityHit": "",
+                "CommandOnBlockHit": "",
+                "SetEntityOnFireSeconds": 10,
+                  "Damage": 25,
+                  "Gravity": 0.00,
+                  "ExplosionRadius": 2,
+                  "ExplosionCausesFire": 0,
+                  "Size": 2.5,
+                  "Lifetime": 220,
+                  "DieOnEntityHit": false,
+                  "DieOnBlockHit": true,
+                  "Appearances": [{
+                      "Type": "renderLayer",
+                      "RenderLayer": "heroes:energy_ball"
+                    },
+                     {
+                      "Type": "particles",
+                      "ParticleType": "minecraft:witch",
+                      "Spread": 0.15,
+                      "Amount": 25
+                    }]
+              },
+            "conditions": {
+                "enabling": [{
+                    "type": "palladium:ability_integer_property",
+                    "ability": "Kitsune.Fox_Fire.Sphere.Animation",
+                    "property": "value",
+                    "min": 5,
+                    "max": 5
+	            }]
+            }
+        }
+    }
+}

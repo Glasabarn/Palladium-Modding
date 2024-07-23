@@ -1,0 +1,11 @@
+{
+    "type": "palladium:compound",
+    "layers": [
+        {
+            "model_type": "palladium:basic",
+            "model_layer": "meow2:purple_test#stuff",
+            "texture": "meow2:textures/models/limitless_purple.png",
+            "render_type": "glow"
+        }
+    ]
+}
