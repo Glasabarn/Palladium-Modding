@@ -19,6 +19,152 @@
     "abilities": 
     {
 
+        "Cleave":{
+            "type": "palladium:projectile",
+            "icon": {
+                "type": "palladium:texture",
+                "texture": "meow2:textures/icons/supernova.png"
+                },
+            "title": "Cleave",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "gui_position": "null",
+            "description": "null",
+            "entity_type": "palladium:custom_projectile",
+            "entity_data": {
+                "CommandOnEntityHit": "",
+                "CommandOnBlockHit": "",
+                "SetEntityOnFireSeconds": 0,
+                "Damage": 25,
+                "Gravity": 0.00,
+                "ExplosionRadius": 0,
+                "ExplosionCausesFire": 0,
+                "Size": 0,
+                "Lifetime": 1,
+                "DieOnEntityHit": false,
+                "DieOnBlockHit": false,
+                "Appearances": [
+                    {
+                    "Type": "renderLayer",
+                    "RenderLayer": "null"
+                    },
+                    {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:sweep_attack",
+                    "Spread": 0,
+                    "Amount": 1
+                    },
+                    {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:warped_spore",
+                    "Spread": 0.4,
+                    "Amount": 10
+                    }]
+            },
+            "inaccuracy": 0,
+            "velocity": 3,
+            "swinging_arm": "main_arm",
+            "damage_from_player": false,
+            "ignore_player_movement": true,
+            "conditions":{
+                "enabling":{
+                    "type": "palladium:action",
+                    "cooldown": 20,
+                    "key_type": "left_click",
+                    "needs_empty_hand": true,
+                    "allow_scrolling_when_crouching": true
+                },
+                "unlocking":{
+                    "type": "palladium:not",
+                    "conditions": [{
+                        "type": "palladium:crouching"
+                    }]
+                }
+            }
+      },
+
+        "AOE_Cleave":{
+            "type": "heroes:aoe_damage",
+            "icon": {
+                "type": "palladium:texture",
+                "texture": "meow2:textures/icons/slicing_exorcism.png"
+                },
+            "title": "null",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 5,
+            "damage": 20,
+            "fire_seconds": 0,
+            "tag_ex": "exclusion_tag",
+            "damage_type": "minecraft:player_attack",
+            "conditions":{
+                "enabling":[{
+                    "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "left_click",
+                        "needs_empty_hand": true,
+                        "allow_scrolling_when_crouching": true
+                    }],
+                "unlocking":[{
+                    "type": "palladium:crouching"
+                    }]
+            }
+      },
+
+        "AOEC_particles":{
+            "type": "palladium:particles",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "emitter": "meow2:AOEC_body",
+            "particle_type": "irons_spellbooks:blastwave",
+            "options": "1 1 1 3",
+            "conditions":{
+                "enabling":[{
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "AOE_Cleave"
+                }]
+            }
+        },
+
+        "CleaveSfx":{
+            "type": "palladium:command",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "playsound heroes:heroes.space_time_sfx player @a[distance=..10] ~ ~ ~ 0.4 1.7"
+            ],
+            "conditions":{
+                "enabling":[{
+                    "type": "palladium:or",
+                    "conditions": [{
+                            "type": "palladium:ability_enabled",
+                            "power": "null",
+                            "ability": "Cleave"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "power": "null",
+                            "ability": "AOE_Cleave"
+                        }]
+                }]
+            }
+      },
+
         "aura":{
             "type": "palladium:render_layer",
             "icon": "minecraft:blaze_rod",
@@ -59,18 +205,18 @@
                 {
                     "type": "palladium:ability_enabled",
                     "power": "null",
-                    "ability": "cleave"
+                    "ability": "dismantle"
                 }
           }
       },
 
-        "cleave":{
+        "Dismantle":{
             "type": "palladium:command",
             "icon": {
                 "type": "palladium:texture",
                 "texture": "meow2:textures/icons/blood_manipulation.png"
                 },
-            "title": "Cleave",
+            "title": "Dismantle",
             "bar_color": "red",
             "energy_bar_usage": {
                 "energy_bar": "Cursed Energy",
@@ -78,17 +224,18 @@
             },
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": 0,
+            "list_index": 1,
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [
                 "function meow2:load"
             ],
             "last_tick_commands": [
+                "tag @e[tag=dismantleEntity, sort=nearest] remove dismantleEntity"
             ],
             "commands":
             [
-              "execute as _Surtur at @s run function meow2:cleave_start"
+                "execute as _Surtur at @s run function meow2:dismantle_start"
             ],
             "conditions":
             {
@@ -105,68 +252,11 @@
                     "cooldown": 60,
                     "ticks": 10,
                     "key_type": "right_click",
-                    "needs_empty_hand": false,
+                    "needs_empty_hand": true,
                     "allow_scrolling_when_crouching": true
                 }]
             }
       },
-
-        "body_test":{
-            "type": "palladium:remove_body_part",
-            "icon": "minecraft:blaze_rod",
-            "title": "null",
-            "bar_color": "red",
-            "hidden": false,
-            "hidden_in_bar": false,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
-            "body_parts": [
-                "chest",
-                "chest_overlay"
-            ],
-            "affects_first_person": true,
-            "conditions":
-            {
-                "enabling":
-                {
-                    "type": "palladium:toggle",
-                    "cooldown": 0,
-                    "key_type": "key_bind",
-                    "needs_empty_hand": false,
-                    "allow_scrolling_when_crouching": true
-                }
-            }
-        },
-
-
-        "body_test2":{
-            "type": "palladium:remove_body_part",
-            "icon": "minecraft:blaze_rod",
-            "title": "null",
-            "bar_color": "red",
-            "hidden": false,
-            "hidden_in_bar": false,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
-            "body_parts": [
-                "chest",
-                "chest_overlay"
-            ],
-            "affects_first_person": true,
-            "conditions":
-            {
-                "enabling":
-                {
-                    "type": "palladium:toggle",
-                    "cooldown": 0,
-                    "key_type": "key_bind",
-                    "needs_empty_hand": false,
-                    "allow_scrolling_when_crouching": true
-                }
-            }
-        },
 
         "reverse_cursed_technique":{
             "type": "palladium:healing",
