@@ -18,8 +18,8 @@
             "first_tick_commands": [],
             "last_tick_commands": [],
             "commands": [
-                "effect give @s irons_spellbooks:planar_sight 1 10 true",
-                "effect give @s minecraft:night_vision 1 10 true"
+                "effect give @s irons_spellbooks:planar_sight 3 10 true",
+                "effect give @s minecraft:night_vision 3 10 true"
             ]
         }
     }

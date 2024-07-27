@@ -1,0 +1,27 @@
+[
+    {
+        "body_part": "right_arm",
+        "rotation_speed": 6,
+        "size": [2.2, 0.2],
+        "offset": [-1, -2, 0],
+        "glow_color": "#FF0000",
+        "glow_opacity": 1,
+        "core_color": "#FF9D00",
+        "core_opacity": 1,
+        "normal_opacity": "false"
+    },
+    {
+        "body_part": "right_arm",
+        "offset": [-1, -2, 0],
+        "glow_color": "#FF9D00",
+        "core_color": "#FF9D00",
+        "particles": [
+            {
+                "particle_type": "irons_spellbooks:dragon_fire",
+                "amount": 20,
+                "motion": [0, 1, 0],
+                "motion_random": [3, 3, 3]
+            }
+        ]
+    }
+]

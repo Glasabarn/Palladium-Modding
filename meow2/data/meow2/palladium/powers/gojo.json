@@ -184,26 +184,22 @@
 
     "self_blue":{
           "type": "palladium:command",
-          "icon": {
+          "icon":{
             "type": "palladium:texture",
             "texture": "meow2:textures/icons/blue_mastery.png"
             },
           "hidden": false,
           "bar_color": "purple",
-          "first_tick_commands":
-          [
+          "first_tick_commands":[
             "function meow2:load"
           ],
-          "commands":
-          [
+          "commands":[
             "execute as _Surtur at @s run function meow2:tick_player"
           ],
           "title": "Self Blue",
           "list_index": 2,
-          "conditions":
-          {
-              "enabling":
-                  [{
+          "conditions":{
+              "enabling":[{
                       "type": "palladium:action",
                       "cooldown": 10,
                       "key_type": "key_bind",

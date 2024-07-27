@@ -1,0 +1,38 @@
+{
+    "name": "Haukur-San Head Popper",
+    "background": "minecraft:textures/block/tinted_glass.png",
+    "icon": "minecraft:textures/block/tinted_glass.png",
+    "gui_display_type": "tree",
+    "abilities": 
+    {
+        "Pop":{
+            "type": "palladium:command",
+            "icon": "meow2:textures/icons/six_eyes.png",
+            "title": "Pop",
+            "bar_color": "black",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "function meow2:load"
+            ],
+            "last_tick_commands": [
+                "tag @e[tag=popEntity, sort=nearest] remove dismantleEntity"
+            ],
+            "commands": [
+                "execute as @s at @s run function meow2:pop_start"
+            ],
+            "conditions": {
+                "enabling":[{
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }]
+            }
+        }
+    }
+}

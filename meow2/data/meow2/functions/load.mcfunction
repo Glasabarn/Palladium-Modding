@@ -6,3 +6,5 @@ scoreboard objectives add teleEntity dummy
 
 scoreboard objectives add dismantleSteps dummy
 scoreboard objectives add dismantleBlock dummy
+
+scoreboard objectives add popSteps dummy
